@@ -9,14 +9,8 @@ import { TransactionsService } from 'src/app/services/transactions.service';
 })
 
 export class TransactionsComponent implements OnInit, AfterViewInit{
-  example = [{
-    "id": 4734,
-    "date": "2018-07-11T22:49:24.000Z",
-    "amount": -193.38,
-    "fee": -3.18,
-    "description": "Lorem ipsum dolor sit amet",
-    "userId": 1
-}]
+orderBy="";
+text="";
 list: Transactions[] = null;
   constructor(private transactions: TransactionsService) {
    }
@@ -28,4 +22,9 @@ list: Transactions[] = null;
   ngOnInit() {
   }
 
+  filterBy(value?){
+    this.transactions.getTransactions(this.orderBy, this.orderBy==='description'? this.text: value).subscribe(res =>{
+      this.list=res;
+    })
+  }
 }

@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    localStorage.removeItem('token')
     this.credentials = this.formBuilder.group({
       username: [null, [Validators.required]],
       password:  [null, [Validators.required]],
