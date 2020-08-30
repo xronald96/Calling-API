@@ -1,0 +1,19 @@
+<div class="content">
+  <div *ngIf="list && list.length===0" class="empty">
+    
+  </div>
+  <div class="list">
+    <div class="card" *ngFor="let transaction of list">
+      <div class="header-card">
+        <p> <b>Date: </b> {{transaction.date | date: "medium"}}</p>
+      </div>
+      <div class="body-card">
+       
+        <p> <b>Amount: </b> {{transaction.amount}}</p>
+        <p> <b>Fee: </b> {{transaction.fee}}</p>
+        <p> <b>Description: </b> {{transaction.description}}</p>
+      </div>
+      <div class="footer-card"></div>
+    </div>
+  </div>
+</div>
