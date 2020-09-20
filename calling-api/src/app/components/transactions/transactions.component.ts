@@ -8,18 +8,17 @@ import { TransactionsService } from 'src/app/services/transactions.service';
   styleUrls: ['./transactions.component.scss']
 })
 
-export class TransactionsComponent implements OnInit, AfterViewInit{
+export class TransactionsComponent implements OnInit{
 orderBy="";
 text="";
 list: Transactions[] = null;
   constructor(private transactions: TransactionsService) {
    }
-  ngAfterViewInit(){
+ 
+  ngOnInit() {
     this.transactions.getTransactions().subscribe(res =>{
       this.list=res;
     })
-  }
-  ngOnInit() {
   }
 
   filterBy(value?){
