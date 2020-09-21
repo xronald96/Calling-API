@@ -1,8 +1,8 @@
-export class Transactions{
-  id:number;
+export class Transactions {
+  id: number;
   date: string;
-  amount:number;
-  fee: number;
-  description: string;
-  userId: number
+  amount: number;
+  fee?: number;
+  description?: string;
+  userId: number;
 }
